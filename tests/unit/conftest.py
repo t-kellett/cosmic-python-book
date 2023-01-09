@@ -8,7 +8,7 @@ from models.orderline import OrderLine
 
 @pytest.fixture
 def small_order():
-    return OrderLine(id=1, sku='SMALL-TABLE', qty=2)
+    return OrderLine(orderid=1, sku='SMALL-TABLE', qty=2)
 
 @pytest.fixture
 def batch():

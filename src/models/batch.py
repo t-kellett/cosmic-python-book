@@ -15,9 +15,9 @@ class Batch:
     def allocate(self, order: OrderLine) -> None:
         if self.can_allocate(order):
             self.available_qty -= order.qty
-            self.allocations[order.id] = order
+            self.allocations[order.orderid] = order
 
     def can_allocate(self, order: OrderLine) -> bool:
-        if order.id in self.allocations:
+        if order.orderid in self.allocations:
             return False
         return order.qty <= self.available_qty and self.sku == order.sku
